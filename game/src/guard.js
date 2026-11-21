@@ -97,6 +97,13 @@ export class Guard {
     this.becomeSuspicious({ x, y }, 0.45);
   }
 
+  // A vase crash echoes through the whole museum: every guard comes
+  // to look, however far away he is.
+  hearAlarm(x, y) {
+    if (this.state === 'alert') return;
+    this.becomeSuspicious({ x, y }, 0.55);
+  }
+
   becomeSuspicious(target, meter = 0.5) {
     if (this.state === 'alert') return;
     if (this.state !== 'suspicious') {

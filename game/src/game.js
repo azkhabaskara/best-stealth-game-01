@@ -123,8 +123,8 @@ export class Game {
   }
 
   onVaseBroken(vase) {
-    for (const guard of this.guards) guard.hearNoise(vase.x, vase.y, 340);
-    this.alarmUntil = this.time + 4;
+    for (const guard of this.guards) guard.hearAlarm(vase.x, vase.y);
+    this.alarmUntil = this.time + 6;
   }
 
   onArtifactTaken() {
